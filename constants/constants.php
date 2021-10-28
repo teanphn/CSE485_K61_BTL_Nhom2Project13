@@ -2,10 +2,10 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$db = "qlcv2"
+$db = "qlcv2";
 
 // Create connection
-$conn = mysqli_connect($servername, $username, $password,$db);
+$conn = mysqli_connect($servername, $username, $password, $db);
 
 // Check connection
 if (!$conn) {
