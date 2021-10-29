@@ -43,8 +43,7 @@
                                             </div>
                                         </div>
                                         <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                                            <button type="login" class="btn btn-primary btn-lg" name='btdangnhap'>Đăng
-                                                nhập</button>
+                                                <input class="btn btn-primary btn-lg" type="submit" name="btlogin" value="Đăng Nhập">
                                         </div>
                                     </form>
                                 </div>
