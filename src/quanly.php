@@ -31,49 +31,45 @@ tr:nth-child(even) {
 }
 </style>
 <section class="vh-100" style="background-color: #eee;">
-<div class="container">
-
+    <div class="container">
+    <h1>Quản lý thông tin và lịch làm của nhân viên</h1>
         <table class=" table">
             <thead>
                 <tr>
+                    <th scope="col">ID</th>
                     <th scope="col">Họ tên</th>
                     <th scope="col">Tuổi</th>
                     <th scope="col">Địa chỉ</th>
                     <th scope="col">Email</th>
-                    <th scope="col">Kế hoạch</th>
-                    <th scope="col">Sửa</th>
-                    <th scope="col">Xóa</th>
+
                 </tr>
             <tbody>
-            <?php
-            include 'constants.php';
-            $sql = "SELECT nd.ho ten, nd.tuoi, nd.dia chi, nd.email
-                    FROM user nd";
+                <?php
+            include ('../constants/constants.php');
+            $sql = "SELECT * FROM user ";
             $result = mysqli_query($conn, $sql);
-
-            if (mysqli_num_rows($result) > 0) {
-              $i = 1;
+            if (mysqli_num_rows($result)>0) {
               while ($row = mysqli_fetch_assoc($result)) {
-            ?>
-                <tr>
-                  <td><?php echo $row['ho ten']; ?> </td>
-                  <td><?php echo $row['tuoi']; ?> </td>
-                  <td><?php echo $row['dia chi']; ?> </td>
-                  <td><?php echo $row['email']; ?> </td>  
-                  <td><?php echo $row['ten']; ?> </td>
-                  <td><a href="edit_DBNV.php?manv=<?php echo $row['manv']; ?>"><i class="fas fa-edit"></i></a></td>
-                  <td><a href="delete_DBNV.php?manv=<?php echo $row['manv']; ?>"><i class="fas fa-trash"></i></a></td>
-                </tr>
-            <?php
-                $i++;
-              }
+                echo '<tr>';
+                echo '<th scope="row">'.$row['iduser'].'</th>';
+                echo '<td>'.$row["ho ten"].'</td>';
+                echo '<td>'.$row["tuoi"].'</td>';
+                echo '<td>'.$row["dia chi"].'</td>';
+                echo '<td>'.$row["email"].'</td>';
+                echo'</tr>';
+                echo'</br>';
             }
+            } else {
+              echo "0 results";
+            }
+            
+            mysqli_close($conn);
             ?>
             </tbody>
         </table>
 
 
-</div>
+    </div>
 </section>
 </div>
 
