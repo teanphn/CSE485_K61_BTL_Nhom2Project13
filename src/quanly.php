@@ -41,6 +41,8 @@ tr:nth-child(even) {
                     <th scope="col">Tuổi</th>
                     <th scope="col">Địa chỉ</th>
                     <th scope="col">Email</th>
+                    <th scope="col">Sửa</th>
+                    <th scope="col">Xóa</th>
 
                 </tr>
             <tbody>
@@ -56,18 +58,22 @@ tr:nth-child(even) {
                 echo '<td>'.$row["tuoi"].'</td>';
                 echo '<td>'.$row["dia chi"].'</td>';
                 echo '<td>'.$row["email"].'</td>';
+                echo '<td><a href="sua.php?id='.$row["iduser"].'" ><i class="bi bi-emoji-heart-eyes"></i>Sửa</a></td>';
+                echo '<td><a href="process_xoa.php?id='.$row["iduser"].'" ><i class="bi bi-emoji-heart-eyes"></i>Xóa</a></td>';
+                
                 echo'</tr>';
                 echo'</br>';
             }
             } else {
               echo "0 results";
             }
-            
             mysqli_close($conn);
             ?>
             </tbody>
         </table>
-
+        <a href="index.php" class="btn btn-info btn-lg " style=" position: relative;left: 1150px;" >
+          <span class="glyphicon glyphicon-log-out"></span> Log out
+        </a>
 
     </div>
 </section>
