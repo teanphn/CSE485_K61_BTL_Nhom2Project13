@@ -47,8 +47,7 @@ tr:nth-child(even) {
             <tbody>
             <?php
             include '../connect/constants.php';
-            $sql = "SELECT nd.ho ten, nd.tuoi, nd.dia chi, nd.email
-                    FROM user nd";
+            $sql = "SELECT*FROM user ";
             $result = mysqli_query($conn, $sql);
 
             if (mysqli_num_rows($result) > 0) {
