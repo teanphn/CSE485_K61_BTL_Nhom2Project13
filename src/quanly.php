@@ -1,3 +1,11 @@
+<?php
+include('../connect/constants.php') ;
+include('checklogin.php');
+if($_SESSION['loai']==2){
+    header('location:nguoidung.php');
+}
+
+?>
 <!doctype html>
 <html lang="en">
 
@@ -71,7 +79,7 @@ tr:nth-child(even) {
             ?>
             </tbody>
         </table>
-        <a href="index.php" class="btn btn-info btn-lg " style=" position: relative;left: 1150px;" >
+        <a href="index.php" class="btn btn-primary btn-lg " style=" position: relative;left: 1150px;" >
           <span class="glyphicon glyphicon-log-out"></span> Log out
         </a>
 

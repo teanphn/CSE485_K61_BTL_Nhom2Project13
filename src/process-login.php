@@ -11,6 +11,7 @@ if(isset($_POST['btlogin'])){
         {
           $row = mysqli_fetch_assoc($res);   
           $_SESSION['loai'] = $row['loai'];
+          $_SESSION['id']=$row['iduser'];
           if ($_SESSION['loai'] == 1){ 
               header("location:quanly.php");
             }
