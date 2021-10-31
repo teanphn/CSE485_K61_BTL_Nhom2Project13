@@ -56,7 +56,7 @@ tr:nth-child(even) {
             <tbody>
             <?php
             include '../connect/constants.php';
-            $sql = "SELECT*FROM user ";
+            $sql = "SELECT*FROM user where loai = 2";
             $result = mysqli_query($conn, $sql);
             if (mysqli_num_rows($result)>0) {
               while ($row = mysqli_fetch_assoc($result)) {
