@@ -51,7 +51,7 @@ include('checklogin.php');
     </div>
     </div>
 </nav>
-<div class="container" style="background-image:url('../images/quanly.jpg');margin-top:2q%; ">
+<div class="container" style="background-image:url('../images/quanly.jpg');margin-top:2%; ">
     <div class="row">
         <div class="col-md-3">
          <img src="../images/no-images.jpg" alt="" class="img-nhanvien" id="img-src">
