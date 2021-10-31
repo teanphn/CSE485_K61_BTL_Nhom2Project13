@@ -1,3 +1,6 @@
+<?php
+include("../connect/constants.php");
+?>
 <!doctype html>
 <html lang="en">
 
@@ -23,7 +26,8 @@
                             <div class="row justify-content-center">
                                 <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
-                                    <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
+
+
 
                                     <form class="mx-1 mx-md-4" action="process-login.php" method="post">
 
@@ -44,7 +48,17 @@
                                         </div>
                                         <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                                                 <input class="btn btn-primary btn-lg" type="submit" name="btlogin" value="Đăng Nhập">
+
                                         </div>
+                                        <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                                        <a href="signup.php" class="btn btn-primary btn-lg" name="btsignup" >Đăng ký</a>
+                                        </div>
+                                        <?php
+                                            if (isset($_SESSION['noti'])) {
+                                            echo $_SESSION['noti'];
+                                            unset($_SESSION['noti']);
+                                             }
+                                        ?>
                                     </form>
                                 </div>
                                 <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">

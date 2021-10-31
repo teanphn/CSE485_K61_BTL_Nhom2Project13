@@ -56,7 +56,7 @@ tr:nth-child(even) {
             <tbody>
             <?php
             include '../connect/constants.php';
-            $sql = "SELECT*FROM user where loai = 2";
+            $sql = "SELECT*FROM user WhERE loai = 2 ";            
             $result = mysqli_query($conn, $sql);
             if (mysqli_num_rows($result)>0) {
               while ($row = mysqli_fetch_assoc($result)) {
@@ -66,7 +66,7 @@ tr:nth-child(even) {
                 echo '<td>'.$row["tuoi"].'</td>';
                 echo '<td>'.$row["dia chi"].'</td>';
                 echo '<td>'.$row["email"].'</td>';
-                echo '<td><a href="sua.php?id='.$row["iduser"].'" ><i class="bi bi-emoji-heart-eyes"></i>Sửa</a></td>';
+                echo '<td><a href="sua.php?id='.$row["iduser"].'" ><i class="bi bi-emoji-heart-eyes"></i>chỉnh sửa</a></td>';
                 echo '<td><a href="process_xoa.php?id='.$row["iduser"].'" ><i class="bi bi-emoji-heart-eyes"></i>Xóa</a></td>';
                 
                 echo'</tr>';
@@ -79,7 +79,7 @@ tr:nth-child(even) {
             ?>
             </tbody>
         </table>
-        <a href="index.php" class="btn btn-primary btn-lg " style=" position: relative;left: 1150px;" >
+        <a href="logout.php" class="btn btn-primary btn-lg " style=" position: relative;left: 1150px;" >
           <span class="glyphicon glyphicon-log-out"></span> Log out
         </a>
 

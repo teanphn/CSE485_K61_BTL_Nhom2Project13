@@ -13,7 +13,7 @@ include('checklogin.php');
         $tuoi = $row['tuoi'];
         $email = $row['email'];
     }
-    $sql = "SELECT * FROM kehoach Where $id=iduser";
+    $sql = "SELECT * FROM kehoach Where $id=idus";
     $result = mysqli_query($conn, $sql);
     if (mysqli_num_rows($result)>0) {
         $row = mysqli_fetch_assoc($result);
@@ -57,38 +57,44 @@ include('checklogin.php');
          <img src="../images/no-images.jpg" alt="" class="img-nhanvien" id="img-src">
         </div>
         <div class="col-md-6">
-        <form action="process-sua.php" method="POST">
+        <form action="sua_nguoidung.php" method="POST">
                     <div class="form-group">
                         <div class="form-group">
                            <label for="exampleInputEmail1">Tên </label>
-                            <input name="firstname" value="<?php echo $firstname?>" type="text" class="form-control" id="exampleInputName">
-                            <small id="emailHelp" class="form-text text-muted">Mời nhập tên</small>
+                            <input name="tennd" value="<?php echo $firstname?>" type="text" class="form-control" id="exampleInputName">
                         </div>
                         <div class="form-group">
                             <label for="exampleInput">Địa chỉ</label>
-                            <input name="mobie" value="<?php echo $diachi?>" type="text" class="form-control" id="exampleInput">
+                            <input name="diachind" value="<?php echo $diachi?>" type="text" class="form-control" id="exampleInput">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInput">Địa chỉ</label>
-                            <input name="mobie" value="<?php echo $email?>" type="text" class="form-control" id="exampleInput">
+                            <label for="exampleInput">Email</label>
+                            <input name="mailnd" value="<?php echo $email?>" type="text" class="form-control" id="exampleInput">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInput">email</label>
-                            <input name="email" value="<?php echo $tuoi?>" type="text" class="form-control" id="exampleInput">
+                            <label for="exampleInput">Tuổi</label>
+                            <input name="tuoind" value="<?php echo $tuoi?>" type="text" class="form-control" id="exampleInput">
                         </div>
                         <div class="form-group">
                             <label for="exampleInput">công việc</label>
-                            <input name="CV" value="<?php echo $cv?>" type="text" class="form-control" id="exampleInput">
+                            <input name="cv" value="<?php echo $cv?>" type="text" class="form-control" id="exampleInput">
                         </div>
                         <button name="btsua" type="submit" class="btn btn-primary btn-lg" style="margin-top:10px">Sửa</button>
+                        <?php
+                                            if (isset($_SESSION['noti'])) {
+                                            echo $_SESSION['noti'];
+                                            unset($_SESSION['noti']);                                          
+                                             }
+                                        ?>
                 </form>
+                <a href="logout.php" class="btn btn-primary btn-lg " style=" position: relative;left: 370px;" >
+          <span class="glyphicon glyphicon-log-out"></span> Log out
+</a>
             </div>
         </div>
     </div>
 </div>
-<a href="index.php" class="btn btn-primary btn-lg " style=" position: relative;left: 1350px;" >
-          <span class="glyphicon glyphicon-log-out"></span> Log out
-</a>
+
 
         
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
