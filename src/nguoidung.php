@@ -13,6 +13,13 @@ include('checklogin.php');
         $tuoi = $row['tuoi'];
         $email = $row['email'];
     }
+    $sql = "SELECT * FROM kehoach Where $id=iduser";
+    $result = mysqli_query($conn, $sql);
+    if (mysqli_num_rows($result)>0) {
+        $row = mysqli_fetch_assoc($result);
+        $tencv = $row['ten'];
+        $cv = $row['noi dung'];
+    }
 ?>
 <!doctype html>
 <html lang="en">
@@ -69,6 +76,10 @@ include('checklogin.php');
                             <label for="exampleInput">email</label>
                             <input name="email" value="<?php echo $tuoi?>" type="text" class="form-control" id="exampleInput">
                         </div>
+                        <div class="form-group">
+                            <label for="exampleInput">công việc</label>
+                            <input name="CV" value="<?php echo $cv?>" type="text" class="form-control" id="exampleInput">
+                        </div>
                         <button name="btsua" type="submit" class="btn btn-primary btn-lg" style="margin-top:10px">Sửa</button>
                 </form>
             </div>
@@ -77,7 +88,8 @@ include('checklogin.php');
 </div>
 <a href="index.php" class="btn btn-primary btn-lg " style=" position: relative;left: 1350px;" >
           <span class="glyphicon glyphicon-log-out"></span> Log out
-        </a>
+</a>
+
         
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
