@@ -17,28 +17,29 @@ if(isset($_POST['btsignup'])){
         header("location:signup.php");
 
     }
-    //$sql_1 = "INSERT INTO user (ho ten,dia chi) VALUES ('$namesu','$andr')";
-
-    $sql_1 = "INSERT INTO `user` ( `ho ten`, `dia chi`, `tuoi`, `email`, `loai`, `taikhoan`, `matkhau`) VALUES ( '$namesu','$andr','$agesu','$mailsu','2','$usernmsu','$pass2')";
-    $sql_2 = "SELECT * FROM user Where $id=iduser";
-    $result = mysqli_query($conn, $sql);
-    if (mysqli_num_rows($result)>0){
-        $row = mysqli_fetch_assoc($result);
-        $firstname = $row['ho ten'];
-        $diachi = $row['dia chi'];
-        $tuoi = $row['tuoi'];
-        $email = $row['email'];
-    }
 
 
-   if (mysqli_query($conn, $sql_1) === TRUE){
-        header("location:index.php");
+    $helper = $usernmsu ;
+    $sql = "INSERT INTO `user` ( `ho ten`, `dia chi`, `tuoi`, `email`, `loai`, `taikhoan`, `matkhau`) 
+    VALUES ( '$namesu','$andr','$agesu','$mailsu','2','$usernmsu','$pass2')";
+
+   if (mysqli_query($conn, $sql)){
+                   //fix thiếu idus
+                    $sql_1 = "SELECT * FROM `user` Where `taikhoan` = '$helper'";
+                    $result = mysqli_query($conn, $sql_1);
+                    if (mysqli_num_rows($result)>0){
+                    $row = mysqli_fetch_assoc($result);
+                    $idus = $row['iduser'];
+                    $sql_2 ="INSERT INTO `kehoach` ( `idus`) VALUES ( '$idus') " ;
+                    $result_2 = mysqli_query($conn, $sql_2);
+                    }
+                   //--
+    header("location:index.php");
     }
     else {
-        echo "Error: " . $sql_1 . "<br>" . mysqli_error($conn);
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
    }
-    //$sql_1 = "INSERT INTO user (ho ten,dia chi,tuoi,email,loai,taikhoan,matkhau) 
-    //VALUES ('$namesu','$andr','$agesu','$mailsu','$agesu','$usernmsu','$pass2')";
+
 
 }
 
