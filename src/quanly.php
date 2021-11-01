@@ -49,14 +49,15 @@ tr:nth-child(even) {
                     <th scope="col">Tuổi</th>
                     <th scope="col">Địa chỉ</th>
                     <th scope="col">Email</th>
-                    <th scope="col">Sửa</th>
+                    <th scope="col">tên việc</th>
+                    <th scope="col">chi tiết</th>
                     <th scope="col">Xóa</th>
 
                 </tr>
             <tbody>
             <?php
             include '../connect/constants.php';
-            $sql = "SELECT*FROM user WhERE loai = 2 ";            
+            $sql = "SELECT iduser,`ho ten`,tuoi,`dia chi`,email,ten FROM user,kehoach WhERE user.iduser = kehoach.idus AND loai = 2 ";            
             $result = mysqli_query($conn, $sql);
             if (mysqli_num_rows($result)>0) {
               while ($row = mysqli_fetch_assoc($result)) {
@@ -66,11 +67,13 @@ tr:nth-child(even) {
                 echo '<td>'.$row["tuoi"].'</td>';
                 echo '<td>'.$row["dia chi"].'</td>';
                 echo '<td>'.$row["email"].'</td>';
-                echo '<td><a href="sua.php?id='.$row["iduser"].'" ><i class="bi bi-emoji-heart-eyes"></i>chỉnh sửa</a></td>';
+                echo '<td>'.$row["ten"].'</td>';
+                echo '<td><a href="sua.php?id='.$row["iduser"].'" ><i class="bi bi-emoji-heart-eyes"></i>chi tiết</a></td>';
                 echo '<td><a href="process_xoa.php?id='.$row["iduser"].'" ><i class="bi bi-emoji-heart-eyes"></i>Xóa</a></td>';
                 
                 echo'</tr>';
                 echo'</br>';
+                $_SESSION['id'] =  $row['iduser'];          
             }
             } else {
               echo "0 results";
