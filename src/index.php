@@ -16,8 +16,8 @@ include("../connect/constants.php");
 </head>
 
 <body>
-    
-<section class="vh-100" style="background-image: url(../images/bg.jpg);">
+
+    <section class="vh-100" style="background-image: url(../images/bg.jpg);">
         <div class="container h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-lg-12 col-xl-11">
@@ -41,23 +41,22 @@ include("../connect/constants.php");
                                         <div class="d-flex flex-row align-items-center mb-4">
                                             <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                                             <div class="form-outline flex-fill mb-0">
-                                                <input type="password" id="txtPass" name="txtPass1"
-                                                    class="form-control" />
+                                                <input type="password" id="txtPass" name="txtPass1" class="form-control" />
                                                 <label class="form-label" for="form3Example4c">Password</label>
                                             </div>
                                         </div>
                                         <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                                                <input class="btn btn-primary btn-lg" type="submit" name="btlogin" value="Đăng Nhập">
+                                            <input class="btn btn-primary btn-lg" type="submit" name="btlogin" value="Đăng Nhập">
 
                                         </div>
                                         <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                                        <a href="signup.php" class="btn btn-primary btn-lg" name="btsignup" >Đăng ký</a>
+                                            <a href="signup.php" class="btn btn-primary btn-lg" name="btsignup">Đăng ký</a>
                                         </div>
                                         <?php
-                                            if (isset($_SESSION['noti'])) {
+                                        if (isset($_SESSION['noti'])) {
                                             echo $_SESSION['noti'];
                                             unset($_SESSION['noti']);
-                                             }
+                                        }
                                         ?>
                                     </form>
                                 </div>
@@ -93,18 +92,14 @@ include("../connect/constants.php");
     </section>
    
 
-  
-        <!-- Optional JavaScript; choose one of the two! -->
 
-        <!-- Option 1: Bootstrap Bundle with Popper -->
+
+
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
         </script>
 
-        <!-- Option 2: Separate Popper and Bootstrap JS -->
-        <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-    -->
-    </body>
+
+</body>
 
 </html>
