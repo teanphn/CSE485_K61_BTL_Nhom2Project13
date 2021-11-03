@@ -71,7 +71,26 @@ include("../connect/constants.php");
                 </div>
             </div>
         </div>
- 
+        <section class="social" style='padding: 5% 0;'>
+        <div class="container text-center">
+            <ul style="list-style-type: none;">
+                <li style="display: inline;padding: 1%;">
+                    <a href="#"><img src="https://img.icons8.com/fluent/50/000000/facebook-new.png"></a>
+                </li>
+                <li style="display: inline;padding: 1%;">
+                    <a href="#"><img src="https://img.icons8.com/fluent/48/000000/instagram-new.png"></a>
+                </li>
+                <li style="display: inline;padding: 1%;">
+                    <a href="#"><img src="https://img.icons8.com/fluent/48/000000/twitter.png"></a>
+                </li>
+            </ul>
+        </div>
+    </section>
+        <section class="footer">
+        <div class="container text-center">
+            <p>All rights reserved. Designed By <a href="#">NHOM9</a></p>
+        </div>
+    </section>
    
 
   
