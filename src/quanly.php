@@ -81,7 +81,7 @@ if ($_SESSION['loai'] == 2) {
                 ?>
             </tbody>
         </table>
-        <a href="logout.php" class="btn btn-primary btn-lg " style=" position: relative;left: 1150px;">
+        <a href="logout.php" class="btn btn-primary btn-lg " style=" position: relative;left: 1000px;">
             <span class="glyphicon glyphicon-log-out"></span> Log out
         </a>
 

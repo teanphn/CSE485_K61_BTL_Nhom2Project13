@@ -44,7 +44,7 @@ if (mysqli_num_rows($result) > 0) {
                 </a>
             </div>
             <div class="col-md-9">
-                <h1 style="float:right;margin-right: 20px;">Thông tin và lịch làm việc của nhân viên</h1></a>
+                <h1 style="float:right;margin-right: 20px;">Chỉnh Sửa</h1></a>
             </div>
         </div>
     </div>
