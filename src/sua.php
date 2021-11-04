@@ -3,7 +3,7 @@ include('../connect/constants.php');
 include('checklogin.php');
 ?>
 <?php
-$id = $_SESSION['id'];
+$id = $_GET['id'];
 $sql = "SELECT * FROM user Where $id=iduser";
 $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0) {
