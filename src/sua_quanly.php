@@ -17,7 +17,8 @@ if (mysqli_query($conn, $sql_2)) {
     echo "Error: " . $sql_2 . "<br>" . mysqli_error($conn);
 }
 $sql_3 = "UPDATE `kehoach`
-SET `noi dung` = '$cv', `ten` = '$tcv'";
+SET `noi dung` = '$cv', `ten` = '$tcv'
+WHERE `idus` = $id";
 if (mysqli_query($conn, $sql_3)) {
     header("location:quanly.php");
     $_SESSION['noti'] = '<p class="text-white">Sửa thành công</p>';
